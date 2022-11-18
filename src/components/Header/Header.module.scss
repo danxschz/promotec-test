@@ -3,7 +3,7 @@
 .header {
   background: $clr-primary;
   color: $clr-neutral-100;
-  padding-block: 1rem;
+  padding-block: 0.7rem;
 }
 
 .content {
@@ -19,7 +19,7 @@
 
   img {
     &:first-child {
-      width: 40px;
+      width: 35px;
     }
 
     &:last-child {
