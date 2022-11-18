@@ -1,11 +1,12 @@
 import Header from './components/Header/Header';
+import List from './pages/List/List';
 import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
     <div className="App">
       <Header />
-      <main></main>
+      <List />
       <Footer />
     </div>
   );

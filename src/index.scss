@@ -31,3 +31,9 @@ ul {
 button {
   cursor: pointer;
 }
+
+main {
+  width: min(90%, 1500px);
+  margin-inline: auto;
+  padding-block: 4rem;
+}

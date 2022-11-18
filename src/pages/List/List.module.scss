@@ -1,0 +1,55 @@
+@use '../../assets/shared' as *;
+
+.content {
+  @include flex-col(1rem);
+}
+
+.search {
+  @include flex-row(1rem, center);
+  align-self: flex-end;
+
+  label {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  input {
+    padding: 0.5rem;
+    height: 100%;
+    border: 1px solid $clr-neutral-200;
+    border-radius: 4px;
+    outline-color: $clr-primary;
+  }
+
+  button {
+    background: $clr-primary;
+    color: $clr-neutral-100;
+    border: none;
+    border-radius: 4px;
+    padding: 0.7rem;
+    transition: opacity 0.3s;
+
+    &:hover, &:focus, &:active {
+      opacity: 0.9;
+    }
+  }
+}
+
+.table {
+  @include flex-col(null);
+  border: 1px solid $clr-neutral-200;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.headings {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  font-weight: 700;
+  padding: 0.8rem;
+  border-bottom: 1px solid $clr-neutral-900;
+}
+
+.center {
+  justify-self: center;
+}
