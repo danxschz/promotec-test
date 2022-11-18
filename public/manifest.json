@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Consulta y Registro de Usuarios",
+  "name": "Módulo de Consulta y Registro de Usuarios",
   "icons": [
     {
       "src": "favicon.ico",
