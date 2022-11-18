@@ -1,8 +1,16 @@
 import styles from './User.module.scss';
 
 const User = (props) => {
-  const { id, title, firstName, lastName, picture } = props.user || {};
-  const name = `${title} ${firstName} ${lastName}`;
+  const { id, title, firstName, lastName, picture } = props.user;
+
+  const titles = {
+    mr: 'sr.',
+    mrs: 'sra.',
+    ms: 'srta.',
+    miss: 'srta.',
+  }
+
+  const name = `${titles[title]} ${firstName} ${lastName}`;
 
   return (
     <article>

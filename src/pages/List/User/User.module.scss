@@ -6,6 +6,10 @@ article {
   align-items: center;
   padding: 0.5rem;
 
+  p {
+    text-transform: capitalize;
+  }
+
   img {
     border-radius: 50%;
     width: 50px;

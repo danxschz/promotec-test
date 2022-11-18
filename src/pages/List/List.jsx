@@ -3,18 +3,22 @@ import { useState, useEffect } from 'react';
 import User from './User/User';
 
 const List = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState({});
 
   useEffect(() => {
-    getUsers();
+    getUsers(1);
   }, [])
 
-  const getUsers = async () => {
-    const url = 'https://dummyapi.io/data/v1/user?page=1&limit=6';
+  const getUsers = async (page) => {
+    const url = `https://dummyapi.io/data/v1/user?page=${page}&limit=10`;
     const response = await fetch(url, { headers: { 'app-id': '63473330c1927d386ca6a3a5' } });
     const json = await response.json();
-    setUsers(json.data);
+    setUsers(json);
   }
+
+  const pagesNumber = (users.total) ? Math.ceil(users.total / users.limit) : null;
+  const pages = [];
+  for (let i = 1; i <= pagesNumber; i++) pages.push(i);
 
   return (
     <main>
@@ -31,7 +35,12 @@ const List = () => {
             <div className={styles.center}>Foto</div>
             <div className={styles.center}>Acciones</div>
           </div>
-          {users.map((i) => <User user={i} key={i.id} />)}
+          {(users.data) ? users.data.map((i) => <User user={i} key={i.id} />): null}
+        </div>
+        <div className={styles.pages}>
+          <button className={styles.page}>{`<`}</button>
+          {pages.map((i) => <a href="/a" className={styles.page}>{i}</a>)}
+          <button className={styles.page} onClick={() => getUsers(users.page + 1)}>{`>`}</button>
         </div>
       </div>
     </main>

@@ -1,7 +1,7 @@
 @use '../../assets/shared' as *;
 
 .content {
-  @include flex-col(1rem);
+  @include flex-col(1.2rem);
 }
 
 .search {
@@ -52,4 +52,38 @@
 
 .center {
   justify-self: center;
+}
+
+.pages {
+  @include flex-row();
+  align-self: flex-end;
+
+  button {
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
+
+.page {
+  @include flex-row(null, center, center);
+  background: $clr-neutral-100;
+  color: $clr-primary;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid $clr-neutral-200;
+  margin-left: -1px;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: $clr-primary;
+    color: $clr-neutral-100;
+  }
 }
