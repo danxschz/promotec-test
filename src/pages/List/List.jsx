@@ -1,16 +1,20 @@
 import styles from './List.module.scss';
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import User from './User/User';
+import { Link } from 'react-router-dom';
 
 const List = () => {
+  const { page } = useParams();
   const [users, setUsers] = useState({});
 
   useEffect(() => {
-    getUsers(1);
-  }, [])
+    const pageNumber = (page) ? page : 1;
+    getUsers(pageNumber);
+  }, [page]) // eslint-disable-line
 
   const getUsers = async (page) => {
-    const url = `https://dummyapi.io/data/v1/user?page=${page}&limit=10`;
+    const url = `https://dummyapi.io/data/v1/user?page=${page - 1}&limit=10`;
     const response = await fetch(url, { headers: { 'app-id': '63473330c1927d386ca6a3a5' } });
     const json = await response.json();
     setUsers(json);
@@ -39,7 +43,7 @@ const List = () => {
         </div>
         <div className={styles.pages}>
           <button className={styles.page}>{`<`}</button>
-          {pages.map((i) => <a href="/a" className={styles.page}>{i}</a>)}
+          {pages.map((i) => <Link to={`/${i}`} className={styles.page} key={i}>{i}</Link>)}
           <button className={styles.page} onClick={() => getUsers(users.page + 1)}>{`>`}</button>
         </div>
       </div>

@@ -8,9 +8,10 @@ const User = (props) => {
     mrs: 'sra.',
     ms: 'srta.',
     miss: 'srta.',
+    dr: 'dr.',
   }
 
-  const name = `${titles[title]} ${firstName} ${lastName}`;
+  const name = titles[title] ? `${titles[title]} ${firstName} ${lastName}` : `${firstName} ${lastName}`;
 
   return (
     <article>
