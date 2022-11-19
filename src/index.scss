@@ -33,11 +33,17 @@ button {
 }
 
 main {
-  width: min(90%, 1500px);
+  width: 94%;
   margin-inline: auto;
   padding-block: 4rem;
 }
 
 #title, #gender {
   text-transform: capitalize;
+}
+
+@media (min-width: 600px) {
+  main {
+    width: min(90%, 1500px);
+  }
 }

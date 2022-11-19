@@ -1,10 +1,14 @@
 @use '../../../assets/shared' as *;
 
-article {
+.article {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 2fr;
   align-items: center;
   padding: 0.5rem;
+
+  strong {
+    display: none;
+  }
 
   p {
     text-transform: capitalize;
@@ -12,7 +16,7 @@ article {
 
   img {
     border-radius: 50%;
-    width: 50px;
+    width: 40px;
   }
 }
 
@@ -32,4 +36,18 @@ article {
 
 .center {
   justify-self: center;
+}
+
+@media (min-width: 600px) {
+  .article {
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+
+    strong {
+      display: block;
+    }
+
+    img {
+      width: 50px;
+    }
+  }
 }

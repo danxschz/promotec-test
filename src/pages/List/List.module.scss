@@ -6,7 +6,7 @@
 
 .search {
   @include flex-row(1rem, center);
-  align-self: flex-end;
+  align-self: center;
 
   label {
     visibility: hidden;
@@ -26,15 +26,20 @@
   @include flex-col(null);
   border: 1px solid $clr-neutral-200;
   border-radius: 4px;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .headings {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 2fr;
+  align-items: center;
   font-weight: 700;
   padding: 0.8rem;
   border-bottom: 1px solid $clr-neutral-900;
+
+  > div:first-child {
+    display: none;
+  }
 }
 
 .center {
@@ -43,7 +48,8 @@
 
 .pages {
   @include flex-row();
-  align-self: flex-end;
+  align-self: center;
+  width: 94vw;
 
   a {
     &:first-child {
@@ -70,5 +76,28 @@
   &:hover, &:focus, &:active {
     background-color: $clr-primary;
     color: $clr-neutral-100;
+  }
+}
+
+@media (min-width: 600px) {
+  .search {
+    align-self: flex-end;
+  }
+
+  .table {
+    padding: 1rem;
+  }
+
+  .headings {
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+
+    > div:first-child {
+      display: block;
+    }
+  }
+
+  .pages {
+    align-self: flex-end;
+    width: auto;
   }
 }

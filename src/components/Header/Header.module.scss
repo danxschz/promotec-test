@@ -11,6 +11,11 @@
   width: min(94%, 1500px);
   margin-inline: auto;
 
+  a {
+    color: $clr-neutral-100;
+    text-decoration: none;
+  }
+
   h1 {
     font-weight: 400;
     font-size: 1.5rem;

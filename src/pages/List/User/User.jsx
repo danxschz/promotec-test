@@ -8,7 +8,7 @@ const User = (props) => {
   const name = titles[title] ? `${titles[title]} ${firstName} ${lastName}` : `${firstName} ${lastName}`;
 
   return (
-    <article>
+    <article className={styles.article}>
       <strong>{id}</strong>
       <p>{name}</p>
       <img src={picture} alt={`Foto de ${firstName} ${lastName}`} className={styles.center} />

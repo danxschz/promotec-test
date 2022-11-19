@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.content}>
-        <h1>Módulo de Consulta y Registro de Usuarios al Sistema</h1>
+        <Link to="/"><h1>Módulo de Consulta y Registro de Usuarios al Sistema</h1></Link>
         <div className={styles.user}>
           <Link to="/"><img src={icon} alt="Grid" className={styles.white} /></Link>
           <picture>
