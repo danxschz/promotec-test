@@ -1,6 +1,7 @@
 import styles from './UserCreate.module.scss';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
+import useDocTitle from '../../hooks/useDocTitle';
 
 const createUser = async (e) => {
   e.preventDefault();
@@ -25,11 +26,19 @@ const createUser = async (e) => {
   })
 
   const json = await response.json();
-  alert(`Usuario ${json.id} creado`);
-  window.location.href = '/';
+  if (json.id) {
+    alert(`Usuario ${json.id} creado`);
+    window.location.href = '/';
+
+  } else {
+    const message = Object.entries(json.data).map(([key, value]) => `${key.charAt(0).toUpperCase()}${key.slice(1)} - ${value}`);
+    alert(`Error: ${message}`);
+  }
 }
 
 const UserCreate = () => {
+  useDocTitle('Crear Usuario');
+
   return (
     <main>
       <div className={styles.content}>

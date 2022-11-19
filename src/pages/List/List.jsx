@@ -1,6 +1,7 @@
 import styles from './List.module.scss';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import useDocTitle from '../../hooks/useDocTitle';
 import User from './User/User';
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
@@ -24,6 +25,8 @@ const List = () => {
   const pagesNumber = (users.total) ? Math.ceil(users.total / users.limit) : null;
   const pages = [];
   for (let i = 1; i <= pagesNumber; i++) pages.push(i);
+
+  useDocTitle();
 
   return (
     <main>

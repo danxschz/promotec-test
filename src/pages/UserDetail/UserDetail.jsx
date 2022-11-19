@@ -2,6 +2,7 @@ import styles from './UserDetail.module.scss';
 import titles, { genders } from '../../data/translations';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import useDocTitle from '../../hooks/useDocTitle';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 
@@ -23,6 +24,8 @@ const UserDetail = () => {
   const { title, firstName, lastName, picture, gender, email, dateOfBirth, phone } = user || {};
 
   const navigate = useNavigate();
+
+  useDocTitle((title) ? `${firstName} ${lastName}` : 'Cargando');
 
   if (user.firstName) return (
     <main>

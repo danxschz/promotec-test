@@ -1,6 +1,7 @@
 import styles from './UserDelete.module.scss';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import useDocTitle from '../../hooks/useDocTitle';
 import Button from '../../components/Button/Button';
 
 const UserDelete = () => {
@@ -32,6 +33,8 @@ const UserDelete = () => {
     alert(`Usuario ${json.id} eliminado`);
     window.location.href = '/';
   }
+
+  useDocTitle('Eliminar Usuario');
 
   if (title) return (
     <main>
