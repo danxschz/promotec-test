@@ -43,9 +43,9 @@ const List = () => {
           {(users.data) ? users.data.map((i) => <User user={i} key={i.id} />): null}
         </div>
         <div className={styles.pages}>
-          <Link to={`/${(page > 1) ? page - 1 : page}`} className={styles.page}>{`<`}</Link>
+          <Link to={`/${(page > 1) ? page - 1 : page || 1}`} className={styles.page}>{`<`}</Link>
           {pages.map((i) => <Link to={`/${i}`} className={styles.page} key={i}>{i}</Link>)}
-          <Link to={`/${(page < 10) ? +page + 1 : page}`} className={styles.page}>{`>`}</Link>
+          <Link to={`/${(page < 10) ? +page + 1 : page || 10}`} className={styles.page}>{`>`}</Link>
         </div>
       </div>
     </main>

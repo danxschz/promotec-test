@@ -13,9 +13,9 @@ const User = (props) => {
       <p>{name}</p>
       <img src={picture} alt={`Foto de ${name}`} className={styles.center} />
       <div className={`${styles.actions} ${styles.center}`}>
-        <i className="fa-regular fa-trash-can"></i>
+        <Link to={`/user/${id}/delete`} aria-label="Eliminar usuario"><i className="fa-regular fa-trash-can"></i></Link>
         <i className="fa-solid fa-pen-to-square"></i>
-        <Link to={`/user/${id}`}><i className="fa-solid fa-eye"></i></Link>
+        <Link to={`/user/${id}`} aria-label="Ver detalle de usuario"><i className="fa-solid fa-eye"></i></Link>
       </div>
     </article>
   )

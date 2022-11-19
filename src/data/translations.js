@@ -9,6 +9,7 @@ const titles = {
 const genders = {
   female: 'mujer',
   male: 'hombre',
+  other: 'otro',
 }
 
 export default titles;

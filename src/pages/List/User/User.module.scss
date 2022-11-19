@@ -17,7 +17,7 @@ article {
 }
 
 .actions {
-  @include flex-row(1rem);
+  @include flex-row(1rem, center);
   font-size: 1.3rem;
 
   a {
