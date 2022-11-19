@@ -1,0 +1,15 @@
+@use '../../assets/shared' as *;
+
+.button {
+  background: $clr-primary;
+  color: $clr-neutral-100;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem;
+  text-decoration: none;
+  transition: opacity 0.3s;
+
+  &:hover, &:focus, &:active {
+    opacity: 0.8;
+  }
+}

@@ -1,15 +1,9 @@
 import styles from './User.module.scss';
+import titles from '../../../data/translations';
+import { Link } from 'react-router-dom';
 
 const User = (props) => {
   const { id, title, firstName, lastName, picture } = props.user;
-
-  const titles = {
-    mr: 'sr.',
-    mrs: 'sra.',
-    ms: 'srta.',
-    miss: 'srta.',
-    dr: 'dr.',
-  }
 
   const name = titles[title] ? `${titles[title]} ${firstName} ${lastName}` : `${firstName} ${lastName}`;
 
@@ -21,7 +15,7 @@ const User = (props) => {
       <div className={`${styles.actions} ${styles.center}`}>
         <i className="fa-regular fa-trash-can"></i>
         <i className="fa-solid fa-pen-to-square"></i>
-        <i className="fa-solid fa-eye"></i>
+        <Link to={`/user/${id}`}><i className="fa-solid fa-eye"></i></Link>
       </div>
     </article>
   )

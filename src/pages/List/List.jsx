@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import User from './User/User';
 import { Link } from 'react-router-dom';
+import Button from '../../components/Button/Button';
 
 const List = () => {
   const { page } = useParams();
@@ -30,7 +31,7 @@ const List = () => {
         <div className={styles.search}>
           <label htmlFor="search">Buscar por ID</label>
           <input type="search" id="search" placeholder="Id a buscar" />
-          <button>Crear usuario</button>
+          <Button text="Crear usuario" />
         </div>
         <div className={styles.table}>
           <div className={styles.headings}>
@@ -42,9 +43,9 @@ const List = () => {
           {(users.data) ? users.data.map((i) => <User user={i} key={i.id} />): null}
         </div>
         <div className={styles.pages}>
-          <button className={styles.page}>{`<`}</button>
+          <Link to={`/${(page > 1) ? page - 1 : page}`} className={styles.page}>{`<`}</Link>
           {pages.map((i) => <Link to={`/${i}`} className={styles.page} key={i}>{i}</Link>)}
-          <button className={styles.page} onClick={() => getUsers(users.page + 1)}>{`>`}</button>
+          <Link to={`/${(page < 10) ? +page + 1 : page}`} className={styles.page}>{`>`}</Link>
         </div>
       </div>
     </main>

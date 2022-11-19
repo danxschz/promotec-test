@@ -11,7 +11,7 @@ const Header = () => {
         <div className={styles.user}>
           <img src={icon} alt="Grid" className={styles.white} />
           <picture>
-            <source srcset={imgWEBP} />
+            <source srcSet={imgWEBP} />
             <img src={imgPNG} alt="User Avatar" />
           </picture>
         </div>

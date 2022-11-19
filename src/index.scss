@@ -37,3 +37,7 @@ main {
   margin-inline: auto;
   padding-block: 4rem;
 }
+
+#title, #gender {
+  text-transform: capitalize;
+}
