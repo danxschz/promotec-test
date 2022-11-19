@@ -26,6 +26,22 @@ const List = () => {
   const pages = [];
   for (let i = 1; i <= pagesNumber; i++) pages.push(i);
 
+  const searchUser = async (e) => {
+    const value = e.target.value
+
+    if (value.length === 24) {
+      const url = `https://dummyapi.io/data/v1/user/${value}`;
+      const response = await fetch(url, { headers: { 'app-id': '63473330c1927d386ca6a3a5' } });
+      const json = await response.json();
+      const users = { data: [json]}
+      setUsers(users);
+    }
+
+    if (!value.length) {
+      getUsers((page) ? page : 1);
+    }
+  }
+
   useDocTitle();
 
   return (
@@ -33,7 +49,7 @@ const List = () => {
       <div className={styles.content}>
         <div className={styles.search}>
           <label htmlFor="search">Buscar por ID</label>
-          <input type="search" id="search" placeholder="Id a buscar" />
+          <input type="search" id="search" placeholder="Id a buscar" onChange={searchUser} />
           <Button text="Crear usuario" to="/user/create" />
         </div>
         <div className={styles.table}>

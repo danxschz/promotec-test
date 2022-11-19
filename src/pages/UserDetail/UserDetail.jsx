@@ -47,7 +47,7 @@ const UserDetail = () => {
     </main>
   )
 
-  else return null;
+  else return <main></main>;
 }
 
 export default UserDetail;
