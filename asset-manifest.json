@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/promotec-test/static/css/main.9bbf1600.css",
+    "main.js": "/promotec-test/static/js/main.983fa928.js",
+    "static/media/user.png": "/promotec-test/static/media/user.13384bf700c11f359465.png",
+    "static/media/user.webp": "/promotec-test/static/media/user.1ce8256a53d78970e71c.webp",
+    "static/media/grid-icon.svg": "/promotec-test/static/media/grid-icon.cc1e9d3a7cbe3a5ba39c7e907b4a7b56.svg",
+    "index.html": "/promotec-test/index.html",
+    "main.9bbf1600.css.map": "/promotec-test/static/css/main.9bbf1600.css.map",
+    "main.983fa928.js.map": "/promotec-test/static/js/main.983fa928.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9bbf1600.css",
+    "static/js/main.983fa928.js"
+  ]
+}
