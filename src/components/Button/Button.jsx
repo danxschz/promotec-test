@@ -2,7 +2,7 @@ import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
 
 const Button = (props) => {
-  const { text, to, onClick, red } = props;
+  const { type, text, to, onClick, red } = props;
 
   const style = (red) ? { background: '#d11a2a' } : null;
 
@@ -11,7 +11,7 @@ const Button = (props) => {
   )
 
   else return (
-    <button className={styles.button} onClick={onClick} style={style}>{text}</button>
+    <button type={type} className={styles.button} onClick={onClick} style={style}>{text}</button>
   )
 }
 

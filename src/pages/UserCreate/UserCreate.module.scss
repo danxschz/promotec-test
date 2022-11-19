@@ -1,0 +1,23 @@
+@use '../../assets/shared' as *;
+
+.content {
+  @include flex-col(2rem, center);
+  width: 50%;
+  margin-inline: auto;
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  form {
+    @include flex-col(1rem);
+    width: 100%;
+  }
+}
+
+.buttons {
+  @include flex-row(1rem, center);
+  align-self: flex-end;
+  margin-top: 1rem;
+}

@@ -40,7 +40,7 @@ const UserDelete = () => {
         <p>{`¿Estás seguro que deseas eliminar el usuario ${firstName} ${lastName}? `}<strong>{`(Id: ${id})`}</strong></p>
         <div className={styles.buttons}>
           <Button text="Eliminar" onClick={deleteUser} red />
-          <Button text="Regresar a lista" onClick={() => navigate(-1)} />
+          <Button text="Cancelar" onClick={() => navigate(-1)} />
         </div>
       </div>
     </main>

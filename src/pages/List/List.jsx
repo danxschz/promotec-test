@@ -31,7 +31,7 @@ const List = () => {
         <div className={styles.search}>
           <label htmlFor="search">Buscar por ID</label>
           <input type="search" id="search" placeholder="Id a buscar" />
-          <Button text="Crear usuario" />
+          <Button text="Crear usuario" to="/user/create" />
         </div>
         <div className={styles.table}>
           <div className={styles.headings}>
