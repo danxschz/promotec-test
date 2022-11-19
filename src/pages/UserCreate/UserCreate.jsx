@@ -3,40 +3,40 @@ import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import useDocTitle from '../../hooks/useDocTitle';
 
-const createUser = async (e) => {
-  e.preventDefault();
-
-  const body = JSON.stringify({
-    title: document.querySelector('#title').value,
-    firstName: document.querySelector('#firstName').value,
-    lastName: document.querySelector('#lastName').value,
-    picture: document.querySelector('#picture').value,
-    gender: document.querySelector('#gender').value,
-    email: document.querySelector('#email').value,
-    dateOfBirth: document.querySelector('#dateOfBirth').value,
-    phone: document.querySelector('#phone').value,
-  });
-
-  const url = 'https://dummyapi.io/data/v1/user/create';
-
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'app-id': '63473330c1927d386ca6a3a5', 'Content-Type': 'application/json' },
-    body
-  })
-
-  const json = await response.json();
-  if (json.id) {
-    alert(`Usuario ${json.id} creado`);
-    window.location.href = '/';
-
-  } else {
-    const message = Object.entries(json.data).map(([key, value]) => `${key.charAt(0).toUpperCase()}${key.slice(1)} - ${value}`);
-    alert(`Error: ${message}`);
-  }
-}
-
 const UserCreate = () => {
+  const createUser = async (e) => {
+    e.preventDefault();
+  
+    const body = JSON.stringify({
+      title: document.querySelector('#title').value,
+      firstName: document.querySelector('#firstName').value,
+      lastName: document.querySelector('#lastName').value,
+      picture: document.querySelector('#picture').value,
+      gender: document.querySelector('#gender').value,
+      email: document.querySelector('#email').value,
+      dateOfBirth: document.querySelector('#dateOfBirth').value,
+      phone: document.querySelector('#phone').value,
+    });
+  
+    const url = 'https://dummyapi.io/data/v1/user/create';
+  
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'app-id': '63473330c1927d386ca6a3a5', 'Content-Type': 'application/json' },
+      body
+    })
+  
+    const json = await response.json();
+    if (json.id) {
+      alert(`Usuario ${json.id} creado`);
+      window.location.href = '/';
+  
+    } else {
+      const message = Object.entries(json.data).map(([key, value]) => `${key.charAt(0).toUpperCase()}${key.slice(1)} - ${value}`);
+      alert(`Error: ${message}`);
+    }
+  }
+
   useDocTitle('Crear Usuario');
 
   return (

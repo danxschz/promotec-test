@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import List from './pages/List/List';
 import UserCreate from './pages/UserCreate/UserCreate';
 import UserDetail from './pages/UserDetail/UserDetail';
+import UserUpdate from './pages/UserUpdate/UserUpdate';
 import UserDelete from './pages/UserDelete/UserDelete';
 import Footer from './components/Footer/Footer';
 
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/:page" element={<List />} />
           <Route path="/user/create" element={<UserCreate />} />
           <Route path="/user/:id" element={<UserDetail />} />
+          <Route path="/user/:id/update" element={<UserUpdate />} />
           <Route path="/user/:id/delete" element={<UserDelete />} />
         </Routes>
         <Footer />
