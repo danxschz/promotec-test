@@ -10,7 +10,7 @@ import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/promotec-test">
       <ScrollToTop />
       <div className="App">
         <Header />
